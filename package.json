@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Vedaant-Rajoo",
   "license": "ISC",
   "dependencies": {
     "bignumber.js": "^9.0.0",
