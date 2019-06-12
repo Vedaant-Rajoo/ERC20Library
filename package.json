@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha || true"
   },
   "author": "Vedaant-Rajoo",
   "license": "ISC",
@@ -13,5 +13,9 @@
     "ethereum-address": "0.0.4",
     "web3": "^1.0.0-beta.31",
     "websocket": "^1.0.28"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
