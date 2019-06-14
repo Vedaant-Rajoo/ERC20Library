@@ -52,8 +52,9 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 			// console.log(flag);
 			if(flag){
 				var res = await erc20.methods.getERC20AssetBalances(a,b).call();
-				console.log(res);
-				console.log(changeToBalance(res));
+				/* console.log(res); */
+				//console.log(changeToBalance(res));
+				return changeToBalance(res);
 			}
 			else
 				console.log("Error! Something went wrong");
@@ -65,7 +66,7 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 
 	var ethOwner = ["0x71C87c3CdDD796ED3319A3D47676301b51B66139"];
 
-	getERC20AssetBalances(tokenOwner,tokenAddresses);
+	//getERC20AssetBalances(tokenOwner,tokenAddresses);
 
 	 async function getEthBalances(a){
 		try{
@@ -79,7 +80,7 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 			}
 			if(flag){
 				var res = await erc20.methods.getEthBalances(a).call();
-				console.log(changeToEth(res));
+				return changeToEth(res);
 			}
 			else
 				console.log("Error");
@@ -88,7 +89,7 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 			console.log(er);
 		}
 	}
-	getEthBalances(ethOwner);
+	//getEthBalances(ethOwner);
 
 	async function getERC20Allowances(a,b,c){
 		try 
@@ -103,7 +104,8 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 			}
 			if(flag){
 				var res = await erc20.methods.getERC20Allowances(a,b,c).call();
-				console.log(res);
+				// console.log(res);
+				return res;
 			}
 			else
 				console.log("Error getting allowances..");
@@ -113,6 +115,6 @@ var tokenAddresses = ["0x381a4c615df73c912f98c7b528fc415186cb69ea","0x381a4c615d
 			console.log(er);
 		}
 	}
-	getERC20Allowances(tokenOwner,tokenAddresses,tokenOwner);
+	//getERC20Allowances(tokenOwner,tokenAddresses,tokenOwner);
 
 module.exports = {getEthBalances,getERC20Allowances,getERC20AssetBalances,changeToEth,changeToBalance};
