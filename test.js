@@ -13,4 +13,10 @@ describe('Basic testing of result types', () => {
             assert.typeOf(r,'array');
         })
     })
+
+    it('should return non-zero balance',() => {
+        erc20.getEthBalances(ethOwner).then(r =>{
+            assert.notEqual(r[0],0);
+        })
+    })
 })
